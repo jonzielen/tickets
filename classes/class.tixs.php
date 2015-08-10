@@ -51,7 +51,9 @@ class Tixs {
 
     $availabilityChange = self::checkAvailabilityChange($showInfo);
 
-    if ((!empty($showInfo['jsonAvailableDates']) && !empty($showInfo['storedDateList'])) || $availabilityChange) {
+    if ((empty($showInfo['jsonAvailableDates']) && empty($showInfo['storedDateList'])) || $availabilityChange) {
+      //die();
+    } else {
       self::sortDateStatus($showInfo);
     }
   }
@@ -64,9 +66,9 @@ class Tixs {
     $diff = array_merge($diffOne, $diffTwo);
 
     if (empty($diff)) {
-      return false;
-    } else {
       return true;
+    } else {
+      return false;
     }
   }
 

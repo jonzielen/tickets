@@ -18,7 +18,7 @@
                     'url' => 'http://www.showclix.com/event/TheTonightShowStarringJimmyFallon/recurring-event-times',
                     //'url' => 'assets/jf-recurring-event-times.json',
                     'showName' => ($showName = 'The Tonight Show Starring Jimmy Fallon'),
-                    'emailTo' => $jonsEmail.', test@test.test',
+                    'emailTo' => $jonsEmail,
                     'datesFile' => datesFileName($showName)
                 ],
                 'stephenColbert' => [
