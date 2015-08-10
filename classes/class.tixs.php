@@ -3,7 +3,7 @@
 namespace jz;
 
 class Tixs {
-  protected $email;
+  protected $email = [];
   protected $settings;
   protected $showsList;
 
@@ -165,9 +165,14 @@ class Tixs {
     $showInfo['emailMessage'] = $message.$soldOutMessage;
 
     // collect info for the email
-    $this->email['showName'] = $showInfo['showName'];
-    $this->email['emailTo'] = $showInfo['emailTo'];
-    $this->email['emailMessage'] = $showInfo['emailMessage'];
+    $this->email[] = [
+        'showName' => $showInfo['showName'],
+        'emailTo' => $showInfo['emailTo'],
+        'emailMessage' => $showInfo['emailMessage']
+    ];
+    // $this->email[]['showName'] = $showInfo['showName'];
+    // $this->email[]['emailTo'] = $showInfo['emailTo'];
+    // $this->email[]['emailMessage'] = $showInfo['emailMessage'];
   }
 
   protected function emailDateLinksTpl($date) {

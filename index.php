@@ -13,8 +13,9 @@
         $email = new jon\SendEmail($emailDetails);
     }
 
-  echo '<pre>';
-  print_r($emailDetails);
-  //print_r($showsInfo);
-  echo '</pre>';
+
+  // echo '<pre>';
+  // print_r($tickets);
+  // print_r($showsInfo);
+  // echo '</pre>';
 ?>
