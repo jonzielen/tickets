@@ -8,6 +8,13 @@
 
     $emailDetails = $tickets->emailMessage();
 
-    require_once 'classes/class.send-email.php';
-    $email = new jon\SendEmail($emailDetails);
+    if (!empty($emailDetails)) {
+        require_once 'classes/class.send-email.php';
+        $email = new jon\SendEmail($emailDetails);
+    }
+
+  echo '<pre>';
+  print_r($emailDetails);
+  //print_r($showsInfo);
+  echo '</pre>';
 ?>

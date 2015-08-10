@@ -8,8 +8,6 @@ class Tixs {
   protected $showsList;
 
   public function __construct($showsInfo) {
-      unset($this->email);
-
       // loop through each ticket seller, get their settings
       foreach ($showsInfo as $ticketSeller => $ticketSellerOptions) {
           // get ticket seller settings
@@ -183,6 +181,7 @@ class Tixs {
   }
 
   public function emailMessage() {
-      return $this->email;
+    $email = $this->email;
+    return $email;
   }
 }
