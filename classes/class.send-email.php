@@ -5,19 +5,12 @@ namespace jon;
 class SendEmail {
 
   public function __construct($emailInfo) {
-
-
-    echo '<pre>';
-    print_r($emailInfo);
-    //print_r($showsInfo);
-    echo '</pre>';
-    die();
-
-
-    $email['to'] = $emailInfo['emailTo'];
-    $email['subject'] = $emailInfo['showName'].' Tickets';
-    $email['message'] = $emailInfo['emailMessage'];
-    self::compileEmail($email);
+    foreach ($emailInfo as $email) {
+        $email['to'] = $email['emailTo'];
+        $email['subject'] = $email['showName'].' Tickets';
+        $email['message'] = $email['emailMessage'];
+        self::compileEmail($email);
+    }
   }
 
   protected function compileEmail($email) {

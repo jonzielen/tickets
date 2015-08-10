@@ -170,9 +170,6 @@ class Tixs {
         'emailTo' => $showInfo['emailTo'],
         'emailMessage' => $showInfo['emailMessage']
     ];
-    // $this->email[]['showName'] = $showInfo['showName'];
-    // $this->email[]['emailTo'] = $showInfo['emailTo'];
-    // $this->email[]['emailMessage'] = $showInfo['emailMessage'];
   }
 
   protected function emailDateLinksTpl($date) {

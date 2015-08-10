@@ -15,22 +15,22 @@
             ],
             'shows' => [
                 'jimmyFallon' => [
-                    //'url' => 'http://www.showclix.com/event/TheTonightShowStarringJimmyFallon/recurring-event-times',
-                    'url' => 'assets/jf-recurring-event-times.json',
+                    'url' => 'http://www.showclix.com/event/TheTonightShowStarringJimmyFallon/recurring-event-times',
+                    //'url' => 'assets/jf-recurring-event-times.json',
                     'showName' => ($showName = 'The Tonight Show Starring Jimmy Fallon'),
                     'emailTo' => $jonsEmail.', test@test.test',
                     'datesFile' => datesFileName($showName)
                 ],
                 'stephenColbert' => [
-                    //'url' => 'http://www.showclix.com/event/TheLateShowwithStephenColb604314/recurring-event-times',
-                    'url' => 'assets/sc-recurring-event-times.json',
+                    'url' => 'http://www.showclix.com/event/TheLateShowwithStephenColb604314/recurring-event-times',
+                    //'url' => 'assets/sc-recurring-event-times.json',
                     'showName' => ($showName = 'The Late Show with Stephen Colbert'),
                     'emailTo' => $jonsEmail,
                     'datesFile' => datesFileName($showName)
                 ],
                 'sethMeyers' => [
-                    //'url' => 'http://www.showclix.com/event/latenightseth/recurring-event-times',
-                    'url' => 'assets/sm-recurring-event-times.json',
+                    'url' => 'http://www.showclix.com/event/latenightseth/recurring-event-times',
+                    //'url' => 'assets/sm-recurring-event-times.json',
                     'showName' => ($showName = 'Late Night with Seth Meyers'),
                     'emailTo' => $jonsEmail,
                     'datesFile' => datesFileName($showName)
