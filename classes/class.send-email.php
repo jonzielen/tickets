@@ -5,9 +5,9 @@ namespace jon;
 class SendEmail {
 
   public function __construct($emailInfo) {
-    $email['to'] = $emailInfo['details']['emailTo'];
-    $email['subject'] = $emailInfo['details']['showName'].' Tickets';
-    $email['message'] = $emailInfo['message'];
+    $email['to'] = $emailInfo['emailTo'];
+    $email['subject'] = $emailInfo['showName'].' Tickets';
+    $email['message'] = $emailInfo['emailMessage'];
     self::compileEmail($email);
   }
 
