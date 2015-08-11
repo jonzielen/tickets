@@ -7,7 +7,8 @@ class SendEmail {
   public function __construct($emailInfo) {
     foreach ($emailInfo as $email) {
         $email['to'] = $email['emailTo'];
-        $email['subject'] = $email['showName'].' Tickets';
+        $email['emailAlt'] = $email['showName'];
+        $email['subject'] = $email['showName'].' Tickets - '.date("l, F j, Y");
         $email['message'] = $email['emailMessage'];
         $email['url'] = $email['showUrl'];
         $email['template'] = self::addEmailTpl($email);
@@ -21,7 +22,7 @@ class SendEmail {
       // load tempate
       $file = str_replace('{url}', $email['url'], $file);
       $file = str_replace('{headerImage}', $email['emailHeaderImage'], $file);
-      $file = str_replace('{headerImageAlt}', $email['subject'], $file);
+      $file = str_replace('{headerImageAlt}', $email['emailAlt'], $file);
       $file = str_replace('{message}', $email['message'], $file);
 
       return $file;
