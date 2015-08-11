@@ -1,6 +1,6 @@
 <?php
     // load shows to check for
-    require_once 'shows-info.php';
+    require_once 'assets/shows-info.php';
 
     // load tickets class
     require_once 'classes/class.tixs.php';

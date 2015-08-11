@@ -18,7 +18,6 @@ class Tixs {
 
           // foreach show from this ticket seller
           foreach ($this->showsList as $show => $showInfo) {
-            $showsDetails = $showInfo;
             self::loadJsonFile($showInfo);
           }
       }
@@ -54,6 +53,7 @@ class Tixs {
 
     if ((empty($showInfo['jsonAvailableDates']) && empty($showInfo['storedDateList'])) || $availabilityChange) {
       //die();
+      self::sortDateStatus($showInfo);
     } else {
       self::sortDateStatus($showInfo);
     }
@@ -127,7 +127,7 @@ class Tixs {
     $soldOutMessage = '';
 
     if (!empty($showInfo['jsonAvailableDates'])) {
-      $message .= 'The following {date_count} available:<br />';
+      $message .= 'The following <strong>'.$showInfo['showName'].'</strong> {date_count} available:<br /><br />';
       $dateCount = 0;
 
       // add available dates with link to email message
@@ -148,7 +148,7 @@ class Tixs {
         $soldOutMessage .= '<br />';
       }
 
-      $soldOutMessage .= 'The following {soldout_count} sold out:<br />';
+      $soldOutMessage .= 'The following <strong>'.$showInfo['showName'].'</strong> {soldout_count} sold out:<br /><br />';
       $soldoutCount = 0;
 
       // add sold out dates to email message
