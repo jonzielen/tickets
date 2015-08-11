@@ -181,7 +181,7 @@ class Tixs {
   }
 
   protected function emailDateLinksTpl($date) {
-    $tpl = '<a href="http://www.showclix.com{uri}">{new_time}</a><br />';
+    $tpl = '<a href="http://www.showclix.com{uri}" style="text-decoration:none;font-weight:bold;">{new_time}</a><br />';
 
    foreach ($date as $key => $val) {
      $tpl = str_replace("{".$key."}", $val, $tpl);
