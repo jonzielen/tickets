@@ -45,10 +45,11 @@ class Tixs {
       if ($showInfo['jsonFileContent']->times[$i]->event_status != $this->settings['sold_out']) {
         foreach ($showInfo['jsonFileContent']->times[$i] as $key => $value) {
           $showInfo['jsonAvailableDates'][$showInfo['jsonFileContent']->times[$i]->time][$key] = $value;
+          $showInfo['jsonAvailableDates'][$showInfo['jsonFileContent']->times[$i]->time]['new_time'] = date("l, F j, Y", strtotime($showInfo['jsonFileContent']->times[$i]->time));
         }
       }
     }
-
+    
     $availabilityChange = self::checkAvailabilityChange($showInfo);
 
     if ((empty($showInfo['jsonAvailableDates']) && empty($showInfo['storedDateList'])) || $availabilityChange) {
@@ -122,7 +123,6 @@ class Tixs {
   }
 
   protected function compileEmailMessage($showInfo) {
-    // keep these
     $message = '';
     $soldOutMessage = '';
 
@@ -175,7 +175,7 @@ class Tixs {
   }
 
   protected function emailDateLinksTpl($date) {
-    $tpl = '<a href="http://www.showclix.com{uri}">{time}</a><br />';
+    $tpl = '<a href="http://www.showclix.com{uri}">{new_time}</a><br />';
 
    foreach ($date as $key => $val) {
      $tpl = str_replace("{".$key."}", $val, $tpl);
