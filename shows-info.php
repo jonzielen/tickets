@@ -1,4 +1,26 @@
 <?php
+    // ENV variables, since cron cant get server info
+    function getHost() {
+        if (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] != '') {
+            return $_SERVER['HTTP_HOST'];
+        } else {
+            return  '';
+        }
+    }
+
+    $host = getHost();
+
+    switch ($host) {
+        case 'tickets.dev':
+            $GLOBALS['path'] = $_SERVER['HTTP_HOST'];
+            break;
+
+        case '':
+        default:
+            $GLOBALS['path'] = 'tickets.zielenkievicz.com';
+            break;
+    }
+
     $jonsEmail = 'jonzielen@gmail.com';
 
     function datesFileName($showName) {
@@ -6,12 +28,12 @@
     }
 
     function addPathForEmailImages($imgName) {
-        $serverPath = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'assets/img/'.$imgName;
+        $serverPath = 'http://'.$GLOBALS['path'].'/assets/img/'.$imgName;
         return $serverPath;
     }
 
     function addPathForEmailTemplate($tplName) {
-        $serverPath = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'assets/tempates/'.$tplName;
+        $serverPath = 'http://'.$GLOBALS['path'].'/assets/tempates/'.$tplName;
         return $serverPath;
     }
 
@@ -31,7 +53,7 @@
                     'emailTo' => $jonsEmail,
                     'datesFile' => datesFileName($showName),
                     'email' => [
-                        'headerImage' => addPathForEmailImages('the-tonight-show-starring-jimmy-fallon.png'),
+                        'headerImage' => addPathForEmailImages('the-tonight-show-starring-jimmy-fallon.jpg'),
                         'template' => addPathForEmailTemplate('basic-tpl.php')
                     ]
                 ],
@@ -53,7 +75,7 @@
                     'emailTo' => $jonsEmail,
                     'datesFile' => datesFileName($showName),
                     'email' => [
-                        'headerImage' => addPathForEmailImages('late-night-with-seth-meyers.png'),
+                        'headerImage' => addPathForEmailImages('late-night-with-seth-meyers.jpg'),
                         'template' => addPathForEmailTemplate('basic-tpl.php')
                     ]
                 ]

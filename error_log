@@ -1,0 +1,17 @@
+[11-Aug-2015 12:05:02 America/Denver] PHP Notice:  Undefined index: SERVER_NAME in /home1/zielenki/public_html/tickets/shows-info.php on line 9
+[11-Aug-2015 12:06:02 America/Denver] PHP Notice:  Undefined index: SERVER_NAME in /home1/zielenki/public_html/tickets/shows-info.php on line 9
+[11-Aug-2015 12:07:02 America/Denver] PHP Notice:  Undefined index: SERVER_NAME in /home1/zielenki/public_html/tickets/shows-info.php on line 9
+[11-Aug-2015 12:08:03 America/Denver] PHP Notice:  Undefined index: SERVER_NAME in /home1/zielenki/public_html/tickets/shows-info.php on line 9
+[11-Aug-2015 12:09:02 America/Denver] PHP Notice:  Undefined index: SERVER_NAME in /home1/zielenki/public_html/tickets/shows-info.php on line 9
+[11-Aug-2015 12:10:03 America/Denver] PHP Notice:  Undefined index: SERVER_NAME in /home1/zielenki/public_html/tickets/shows-info.php on line 9
+[11-Aug-2015 12:11:02 America/Denver] PHP Notice:  Undefined index: SERVER_NAME in /home1/zielenki/public_html/tickets/shows-info.php on line 9
+[11-Aug-2015 12:12:02 America/Denver] PHP Notice:  Undefined index: SERVER_NAME in /home1/zielenki/public_html/tickets/shows-info.php on line 9
+[11-Aug-2015 12:13:03 America/Denver] PHP Notice:  Undefined index: SERVER_NAME in /home1/zielenki/public_html/tickets/shows-info.php on line 9
+[11-Aug-2015 12:14:02 America/Denver] PHP Notice:  Undefined index: SERVER_NAME in /home1/zielenki/public_html/tickets/shows-info.php on line 9
+[11-Aug-2015 12:15:05 America/Denver] PHP Notice:  Undefined index: SERVER_NAME in /home1/zielenki/public_html/tickets/shows-info.php on line 9
+[11-Aug-2015 12:16:03 America/Denver] PHP Notice:  Undefined index: HTTP_HOST in /home1/zielenki/public_html/tickets/shows-info.php on line 3
+[11-Aug-2015 12:17:03 America/Denver] PHP Notice:  Undefined index: HTTP_HOST in /home1/zielenki/public_html/tickets/shows-info.php on line 3
+[11-Aug-2015 12:18:03 America/Denver] PHP Notice:  Undefined index: HTTP_HOST in /home1/zielenki/public_html/tickets/shows-info.php on line 3
+[11-Aug-2015 12:19:03 America/Denver] PHP Notice:  Undefined index: HTTP_HOST in /home1/zielenki/public_html/tickets/shows-info.php on line 3
+[11-Aug-2015 12:20:03 America/Denver] PHP Notice:  Undefined index: HTTP_HOST in /home1/zielenki/public_html/tickets/shows-info.php on line 3
+[11-Aug-2015 12:21:03 America/Denver] PHP Notice:  Undefined index: HTTP_HOST in /home1/zielenki/public_html/tickets/shows-info.php on line 3
