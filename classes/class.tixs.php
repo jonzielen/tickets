@@ -53,7 +53,7 @@ class Tixs {
 
     if ((empty($showInfo['jsonAvailableDates']) && empty($showInfo['storedDateList'])) || $availabilityChange) {
       //die();
-      self::sortDateStatus($showInfo);
+      //self::sortDateStatus($showInfo);
     } else {
       self::sortDateStatus($showInfo);
     }
