@@ -8,8 +8,8 @@
     -ms-text-size-adjust:none;text-size-adjust:none;} /* ipad text fix */
   </style>
 </head>
-<body style="margin:0;padding:0;background-color:#fff;">
-    <table cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="background-color:#fff;">
+<body style="margin:0;padding:0;background-color:#0F1C5F;">
+    <table cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="background-color:#0F1C5F;">
         <tr>
             <td>
                 <img src="{headerImage}" alt="" style="display:block;width:100%;" />
@@ -20,12 +20,26 @@
         </tr>
         <tr>
             <td>
-                <table style="width:90%;margin:0 auto;">
+                <table cellspacing="0" cellpadding="0" border="0" style="width:90%;margin:0 auto;background-color:#fff;">
+                    <tr>
+                        <td height="14" style="height:14px !important;line-height:1px;font-size:0px;"><span style="font-size:0;line-height:0;">&nbsp;</span></td>
+                    </tr>
                     <tr>
                         <td>
-                            <span style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#000;">Hi!</span><br /><br />
-                            <span style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#000;">{message}</span>
+                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td width="20"></td>
+                                    <td>
+                                        <span style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#000;">Hi!</span><br /><br />
+                                        <span style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#000;">{message}</span>
+                                    </td>
+                                    <td width="20"></td>
+                                </tr>
+                            </table>
                         </td>
+                    </tr>
+                    <tr>
+                        <td height="14" style="height:14px !important;line-height:1px;font-size:0px;"><span style="font-size:0;line-height:0;">&nbsp;</span></td>
                     </tr>
                 </table>
             </td>
@@ -34,14 +48,11 @@
             <td height="14" style="height:14px !important;line-height:1px;font-size:0px;"><span style="font-size:0;line-height:0;">&nbsp;</span></td>
         </tr>
         <tr>
-            <td height="2" style="height:2px!important;line-height:1px;font-size:0px;background-color:#e6e6e6"><span style="font-size:0;line-height:0">&nbsp;</span></td>
-        </tr>
-        <tr>
             <td height="14" style="height:14px !important;line-height:1px;font-size:0px;"><span style="font-size:0;line-height:0;">&nbsp;</span></td>
         </tr>
         <tr>
             <td style="text-align:center;">
-                <span style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#000;">&copy; <?php echo date('Y'); ?>, Jon Z.</span>
+                <span style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#fff;">&copy; <?php echo date('Y'); ?>, Jon Z.</span>
             </td>
         </tr>
         <tr>
