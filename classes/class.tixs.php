@@ -49,7 +49,7 @@ class Tixs {
         }
       }
     }
-    
+
     $availabilityChange = self::checkAvailabilityChange($showInfo);
 
     if ((empty($showInfo['jsonAvailableDates']) && empty($showInfo['storedDateList'])) || $availabilityChange) {
@@ -166,12 +166,17 @@ class Tixs {
 
     $showInfo['emailMessage'] = $message.$soldOutMessage;
 
-    // collect info for the email
-    $this->email[] = [
-        'showName' => $showInfo['showName'],
-        'emailTo' => $showInfo['emailTo'],
-        'emailMessage' => $showInfo['emailMessage']
-    ];
+    // check if there is any message
+    if ($showInfo['emailMessage'] != '') {
+        // collect info for the email
+        $this->email[] = [
+            'showName' => $showInfo['showName'],
+            'emailTo' => $showInfo['emailTo'],
+            'emailMessage' => $showInfo['emailMessage'],
+            'emailHeaderImage' => $showInfo['email']['headerImage'],
+            'emailTemplate' => $showInfo['email']['template']
+        ];
+    }
   }
 
   protected function emailDateLinksTpl($date) {
