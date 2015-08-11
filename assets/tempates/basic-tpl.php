@@ -8,8 +8,8 @@
     -ms-text-size-adjust:none;text-size-adjust:none;} /* ipad text fix */
   </style>
 </head>
-<body style="margin:0;padding:0;background-color:#0F1C5F;">
-    <table cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="background-color:#0F1C5F;">
+<body style="margin:0;padding:0;background-color:#195779;">
+    <table cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="background-color:#195779;">
         <tr>
             <td>
                 <a href="{url}"><img src="{headerImage}" alt="{headerImageAlt}" style="display:block;width:100%;" /></a>
