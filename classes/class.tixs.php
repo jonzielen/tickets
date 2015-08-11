@@ -25,7 +25,7 @@ class Tixs {
 
   protected function loadJsonFile($showInfo) {
     $showInfo['storedDateList'] = self::loadDatesFile($showInfo['datesFile']);
-    $showInfo['jsonFileContent'] = json_decode(file_get_contents($showInfo['url']));
+    $showInfo['jsonFileContent'] = json_decode(file_get_contents($showInfo['tickets']));
 
     self::jsonAvailableDates($showInfo);
   }
@@ -171,6 +171,7 @@ class Tixs {
         // collect info for the email
         $this->email[] = [
             'showName' => $showInfo['showName'],
+            'showUrl' => $showInfo['url'],
             'emailTo' => $showInfo['emailTo'],
             'emailMessage' => $showInfo['emailMessage'],
             'emailHeaderImage' => $showInfo['email']['headerImage'],

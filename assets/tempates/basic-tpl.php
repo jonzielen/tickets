@@ -12,7 +12,7 @@
     <table cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="background-color:#0F1C5F;">
         <tr>
             <td>
-                <img src="{headerImage}" alt="" style="display:block;width:100%;" />
+                <a href="{url}"><img src="{headerImage}" alt="{headerImageAlt}" style="display:block;width:100%;" /></a>
             </td>
         </tr>
         <tr>

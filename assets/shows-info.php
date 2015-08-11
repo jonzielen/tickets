@@ -47,8 +47,9 @@
             ],
             'shows' => [
                 'jimmyFallon' => [
-                    'url' => 'http://www.showclix.com/event/TheTonightShowStarringJimmyFallon/recurring-event-times',
-                    //'url' => 'assets/js/jf-recurring-event-times.json',
+                    'tickets' => 'http://www.showclix.com/event/TheTonightShowStarringJimmyFallon/recurring-event-times',
+                    //'tickets' => 'assets/js/jf-recurring-event-times.json',
+                    'url' => 'https://www.showclix.com/event/latenightseth',
                     'showName' => ($showName = 'The Tonight Show Starring Jimmy Fallon'),
                     'emailTo' => $jonsEmail,
                     'datesFile' => datesFileName($showName),
@@ -58,8 +59,9 @@
                     ]
                 ],
                 'stephenColbert' => [
-                    'url' => 'http://www.showclix.com/event/TheLateShowwithStephenColb604314/recurring-event-times',
-                    //'url' => 'assets/js/sc-recurring-event-times.json',
+                    'tickets' => 'http://www.showclix.com/event/TheLateShowwithStephenColb604314/recurring-event-times',
+                    //'tickets' => 'assets/js/sc-recurring-event-times.json',
+                    'url' => 'https://www.showclix.com/event/latenightseth',
                     'showName' => ($showName = 'The Late Show with Stephen Colbert'),
                     'emailTo' => $jonsEmail,
                     'datesFile' => datesFileName($showName),
@@ -69,8 +71,9 @@
                     ]
                 ],
                 'sethMeyers' => [
-                    'url' => 'http://www.showclix.com/event/latenightseth/recurring-event-times',
-                    //'url' => 'assets/js/sm-recurring-event-times.json',
+                    'tickets' => 'http://www.showclix.com/event/latenightseth/recurring-event-times',
+                    //'tickets' => 'assets/js/sm-recurring-event-times.json',
+                    'url' => 'https://www.showclix.com/event/latenightseth',
                     'showName' => ($showName = 'Late Night with Seth Meyers'),
                     'emailTo' => $jonsEmail,
                     'datesFile' => datesFileName($showName),

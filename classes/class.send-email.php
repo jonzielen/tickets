@@ -9,6 +9,7 @@ class SendEmail {
         $email['to'] = $email['emailTo'];
         $email['subject'] = $email['showName'].' Tickets';
         $email['message'] = $email['emailMessage'];
+        $email['url'] = $email['showUrl'];
         $email['template'] = self::addEmailTpl($email);
         self::compileEmail($email);
     }
@@ -18,7 +19,9 @@ class SendEmail {
       $file = file_get_contents($email['emailTemplate']);
 
       // load tempate
+      $file = str_replace('{url}', $email['url'], $file);
       $file = str_replace('{headerImage}', $email['emailHeaderImage'], $file);
+      $file = str_replace('{headerImageAlt}', $email['subject'], $file);
       $file = str_replace('{message}', $email['message'], $file);
 
       return $file;
