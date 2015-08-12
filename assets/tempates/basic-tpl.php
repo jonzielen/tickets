@@ -52,7 +52,7 @@
         </tr>
         <tr>
             <td style="text-align:center;">
-                <span style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#fff;">&copy; <?php echo date('Y'); ?>, Jon Z.</span>
+                <span style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#999;">&copy; <?php echo date('Y'); ?>, Jon Z.</span>
             </td>
         </tr>
         <tr>
