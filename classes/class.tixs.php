@@ -25,9 +25,18 @@ class Tixs {
 
   protected function loadJsonFile($showInfo) {
     $showInfo['storedDateList'] = self::loadDatesFile($showInfo['datesFile']);
-    $showInfo['jsonFileContent'] = json_decode(file_get_contents($showInfo['tickets']));
+    $showInfo['jsonFileContent'] = self::getJsonFileContents($showInfo['tickets']);
 
     self::jsonAvailableDates($showInfo);
+  }
+
+  protected function getJsonFileContents($path) {
+      $result = json_decode(file_get_contents($path), true);
+      if ($result === false) {
+          $result = [];
+      }
+
+      return $result;
   }
 
   protected function loadDatesFile($file) {
@@ -40,11 +49,11 @@ class Tixs {
 
   protected function jsonAvailableDates($showInfo) {
     $showInfo['jsonAvailableDates'] = [];
-    for ($i = 0; $i < count($showInfo['jsonFileContent']->times); $i++) {
-      if ($showInfo['jsonFileContent']->times[$i]->event_status != $this->settings['sold_out']) {
-        foreach ($showInfo['jsonFileContent']->times[$i] as $key => $value) {
-          $showInfo['jsonAvailableDates'][$showInfo['jsonFileContent']->times[$i]->time][$key] = $value;
-          $showInfo['jsonAvailableDates'][$showInfo['jsonFileContent']->times[$i]->time]['new_time'] = date("l, F j, Y", strtotime($showInfo['jsonFileContent']->times[$i]->time));
+    for ($i = 0; $i < count($showInfo['jsonFileContent']['times']); $i++) {
+      if ($showInfo['jsonFileContent']['times'][$i]['event_status'] != $this->settings['sold_out']) {
+        foreach ($showInfo['jsonFileContent']['times'][$i] as $key => $value) {
+          $showInfo['jsonAvailableDates'][$showInfo['jsonFileContent']['times'][$i]['time']][$key] = $value;
+          $showInfo['jsonAvailableDates'][$showInfo['jsonFileContent']['times'][$i]['time']]['new_time'] = date("l, F j, Y", strtotime($showInfo['jsonFileContent']['times'][$i]['time']));
         }
       }
     }
