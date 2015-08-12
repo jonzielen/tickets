@@ -59,7 +59,7 @@
                     ]
                 ],
                 'stephenColbert' => [
-                    'tickets' => 'http://www.showclix.com/event/TheLateShowwithStephenColb604314/recurring-event-times',
+                    'tickets' => 'http://www.showclix.com/event/TheLateShowWithStephenColbert/recurring-event-times',
                     //'tickets' => 'assets/js/sc-recurring-event-times.json',
                     'url' => 'https://www.showclix.com/event/latenightseth',
                     'showName' => ($showName = 'The Late Show with Stephen Colbert'),
