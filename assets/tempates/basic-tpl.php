@@ -11,15 +11,15 @@
 <body style="margin:0;padding:0;background-color:#ededed;">
     <table cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color:#ededed;">
         <tr>
-            <td height="10" style="height:10px !important;line-height:1px;font-size:0px;"><span style="font-size:0;line-height:0;">&nbsp;</span></td>
+            <td height="10" style="height:10px !importaticketsnt;line-height:1px;font-size:0px;"><span style="font-size:0;line-height:0;">&nbsp;</span></td>
         </tr>
         <tr>
             <td>
-                <table cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color:#ededed;">
+                <table cellspacing="0" cellpadding="0" border="0" style="background-color:#ededed;">
                     <tr>
                         <td width="10"></td>
                         <td>
-                            <table cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="background-color:#F4F4F4;">
+                            <table cellspacing="0" cellpadding="0" border="0" align="center" style="background-color:#F4F4F4;">
                                 <tr>
                                     <td>
                                         <a href="{url}"><img src="{headerImage}" alt="{headerImageAlt}" style="display:block;width:100%;" /></a>
