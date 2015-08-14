@@ -40,10 +40,20 @@
     $showsInfo = [
         'showclix' => [
             'settings' => [
-                'on_sale' => 'on_sale',
-                'pre_sale' => 'pre_sale',
-                'post_sale' => 'post_sale',
-                'sold_out' => 'sold_out'
+                'status' => [
+                    'on_sale' => 'on_sale',
+                    'pre_sale' => 'pre_sale',
+                    'post_sale' => 'post_sale',
+                    'sold_out' => 'sold_out'
+                ],
+                'errors' => [
+                    'errorLogFile' => 'error_log',
+                    'email' => [
+                        'template' => addPathForEmailTemplate('error-tpl.php'),
+                        'subject' => 'Tickets Error',
+                        'emailTo' => $jonsEmail,
+                    ]
+                ]
             ],
             'shows' => [
                 'jimmyFallon' => [

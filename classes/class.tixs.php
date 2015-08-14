@@ -25,15 +25,23 @@ class Tixs {
 
   protected function loadJsonFile($showInfo) {
     $showInfo['storedDateList'] = self::loadDatesFile($showInfo['datesFile']);
-    $showInfo['jsonFileContent'] = self::getJsonFileContents($showInfo['tickets']);
+    $showInfo['jsonFileContent'] = self::getJsonFileContents($showInfo);
 
     self::jsonAvailableDates($showInfo);
   }
 
-  protected function getJsonFileContents($path) {
-      $result = json_decode(file_get_contents($path), true);
+  protected function getJsonFileContents($showInfo) {
+      $result = json_decode(file_get_contents($showInfo['tickets']), true);
       if ($result === false) {
           $result = [];
+      }
+
+      // send error message
+      if (is_null($result)) {
+          $this->settings['errors']['email']['message'] = file_get_contents($this->settings['errors']['errorLogFile']);
+          $email[] = $this->settings['errors']['email'];
+          require_once 'class.send-email.php';
+          $email = new \jon\SendEmail($email);
       }
 
       return $result;
@@ -50,7 +58,7 @@ class Tixs {
   protected function jsonAvailableDates($showInfo) {
     $showInfo['jsonAvailableDates'] = [];
     for ($i = 0; $i < count($showInfo['jsonFileContent']['times']); $i++) {
-      if ($showInfo['jsonFileContent']['times'][$i]['event_status'] != $this->settings['sold_out']) {
+      if ($showInfo['jsonFileContent']['times'][$i]['event_status'] != $this->settings['status']['sold_out']) {
         foreach ($showInfo['jsonFileContent']['times'][$i] as $key => $value) {
           $showInfo['jsonAvailableDates'][$showInfo['jsonFileContent']['times'][$i]['time']][$key] = $value;
           $showInfo['jsonAvailableDates'][$showInfo['jsonFileContent']['times'][$i]['time']]['new_time'] = date("l, F j, Y", strtotime($showInfo['jsonFileContent']['times'][$i]['time']));
@@ -182,9 +190,9 @@ class Tixs {
             'showName' => $showInfo['showName'],
             'showUrl' => $showInfo['url'],
             'emailTo' => $showInfo['emailTo'],
-            'emailMessage' => $showInfo['emailMessage'],
-            'emailHeaderImage' => $showInfo['email']['headerImage'],
-            'emailTemplate' => $showInfo['email']['template']
+            'message' => $showInfo['emailMessage'],
+            'headerImage' => $showInfo['email']['headerImage'],
+            'template' => $showInfo['email']['template']
         ];
     }
   }
