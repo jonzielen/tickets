@@ -51,15 +51,11 @@ class Tixs
         $formattedData = [];
 
         foreach ($output['events'] as $event) {
-            // fix date
-            $newDateFix = new \DateTime($event['startDateUTC']);
-            $dateFix = $newDateFix->format('Y-m-d');
-
             $formattedData[] = [
                 'title' => $event['title'],
                 'url' => $event['url'],
                 'time' => $event['when'],
-                'date' => $dateFix,
+                'date' => $event['startDateUTC'],
                 'status' => $event['buttonClass']
             ];
         }
