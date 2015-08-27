@@ -15,7 +15,7 @@ class SendEmail {
   protected function formatErrorTpl($emailInfo) {
       $email = $emailInfo[0];
 
-      function addEmailTpl($email) {
+      function addErrorEmailTpl($email) {
         // load tempate
         $file = file_get_contents($email['template']);
         $file = str_replace('{message}', $email['message'], $file);
@@ -24,7 +24,7 @@ class SendEmail {
       }
 
       $email['to'] = $email['emailTo'];
-      $email['template'] = addEmailTpl($email);
+      $email['template'] = addErrorEmailTpl($email);
 
       self::compileEmail($email);
   }
