@@ -124,6 +124,18 @@
                             'headerImage' => addPathForEmailImages('the-tonight-show-starring-jimmy-fallon.jpg'),
                             'template' => addPathForEmailTemplate('basic-tpl.php')
                         ]
+                    ],
+                    'sethMeyers' => [
+                        'tickets' => 'http://s3-us-west-1.amazonaws.com/data.1iota.com/project/461/details/data.json',
+                        //'tickets' => 'assets/js/sm-recurring-event-times.json',
+                        'url' => 'http://1iota.com/Show/461/Late-Night-with-Seth-Meyers',
+                        'showName' => ($showName = 'The Tonight Show Starring Jimmy Fallon'),
+                        'emailTo' => $jonsEmail,
+                        'datesFile' => datesFileName($showName),
+                        'email' => [
+                            'headerImage' => addPathForEmailImages('the-tonight-show-starring-jimmy-fallon.jpg'),
+                            'template' => addPathForEmailTemplate('basic-tpl.php')
+                        ]
                     ]
                 ]
             ]
