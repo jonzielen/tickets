@@ -31,7 +31,7 @@ class Tixs
                     $this->settings = $ticketSellerOptions['settings'];
 
                     // format this data to work with class
-                    self::format1iota($ticketSellerOptions['shows']);
+                    self::load1iotaShows($ticketSellerOptions['shows']);
 
                     // get shows to check for, and their info
                     //$this->showsList = $ticketSellerOptions['shows'];
@@ -40,14 +40,14 @@ class Tixs
         }
     }
 
-    protected function format1iota($shows) {
+    protected function load1iotaShows($shows) {
         foreach ($shows as $show) {
             $output = shell_exec('curl '.$show['tickets'].' -H "Accept: application/json, text/javascript, */*; q=0.01" --compressed');
-            self::dataFrom1iota(json_decode($output, true));
+            self::format1iotaData(json_decode($output, true));
         }
     }
 
-    protected function dataFrom1iota($output) {
+    protected function format1iotaData($output) {
         $formattedData = [];
 
         foreach ($output['events'] as $event) {
