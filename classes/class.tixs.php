@@ -12,30 +12,15 @@ class Tixs
     {
         // loop through each ticket seller, get their settings
       foreach ($showsInfo['vendors'] as $ticketSeller => $ticketSellerOptions) {
-          switch ($ticketSeller) {
-                case 'showclix':
-                    // get ticket seller settings
-                    $this->settings = $ticketSellerOptions['settings'];
+            // get ticket seller settings
+            $this->settings = $ticketSellerOptions['settings'];
 
-                    // get shows to check for, and their info
-                    $this->showsList = $ticketSellerOptions['shows'];
+            // get shows to check for, and their info
+            $this->showsList = $ticketSellerOptions['shows'];
 
-                    // foreach show from this ticket seller
-                    foreach ($this->showsList as $show => $showInfo) {
-                        self::loadJsonFile($showInfo);
-                    }
-                break;
-
-                case '1iota':
-                    // get ticket seller settings
-                    $this->settings = $ticketSellerOptions['settings'];
-
-                    // format this data to work with class
-                    self::load1iotaShows($ticketSellerOptions['shows']);
-
-                    // get shows to check for, and their info
-                    //$this->showsList = $ticketSellerOptions['shows'];
-                break;
+            // foreach show from this ticket seller
+            foreach ($this->showsList as $show => $showInfo) {
+                self::loadJsonFile($showInfo);
             }
         }
     }
@@ -56,13 +41,11 @@ class Tixs
                 'url' => $event['url'],
                 'time' => $event['when'],
                 'date' => $event['startDateUTC'],
-                'status' => $event['buttonClass']
+                'event_status' => $event['buttonClass']
             ];
         }
 
-        echo '<pre>';
-        print_r($formattedData);
-        echo '</pre>';
+        return $formattedData;
     }
 
     protected function loadJsonFile($showInfo)
@@ -250,7 +233,7 @@ class Tixs
 
     protected function emailDateLinksTpl($date)
     {
-        $tpl = '<a href="http://www.showclix.com{uri}" style="text-decoration:none;font-weight:bold;">{new_time}</a><br />';
+        $tpl = '<a href="'.$this->settings['baseUrl'].'{uri}" style="text-decoration:none;font-weight:bold;">{new_time}</a><br />';
 
         foreach ($date as $key => $val) {
             $tpl = str_replace('{'.$key.'}', $val, $tpl);

@@ -54,7 +54,8 @@
                             'subject' => 'Tickets Error',
                             'emailTo' => $jonsEmail,
                         ]
-                    ]
+                    ],
+                    'baseUrl' => 'http://www.showclix.com'
                 ],
                 'shows' => [
                     'jimmyFallon' => [
@@ -110,7 +111,8 @@
                             'subject' => 'Tickets Error',
                             'emailTo' => $jonsEmail,
                         ]
-                    ]
+                    ],
+                    'baseUrl' => 'http://1iota.com'
                 ],
                 'shows'=> [
                     'jimmyFallon' => [
@@ -141,4 +143,3 @@
             ]
         ]
     ];
-?>
