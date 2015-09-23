@@ -20,32 +20,10 @@ class Tixs
 
             // foreach show from this ticket seller
             foreach ($this->showsList as $show => $showInfo) {
+                $showInfo['ticketSeller'] = $ticketSeller;
                 self::loadJsonFile($showInfo);
             }
         }
-    }
-
-    protected function load1iotaShows($shows) {
-        foreach ($shows as $show) {
-            $output = shell_exec('curl '.$show['tickets'].' -H "Accept: application/json, text/javascript, */*; q=0.01" --compressed');
-            self::format1iotaData(json_decode($output, true));
-        }
-    }
-
-    protected function format1iotaData($output) {
-        $formattedData = [];
-
-        foreach ($output['events'] as $event) {
-            $formattedData[] = [
-                'title' => $event['title'],
-                'url' => $event['url'],
-                'time' => $event['when'],
-                'date' => $event['startDateUTC'],
-                'event_status' => $event['buttonClass']
-            ];
-        }
-
-        return $formattedData;
     }
 
     protected function loadJsonFile($showInfo)
@@ -83,8 +61,50 @@ class Tixs
         }
     }
 
+    protected function load1iotaShows($shows) {
+        foreach ($shows as $show) {
+            $output = shell_exec('curl '.$show['tickets'].' -H "Accept: application/json, text/javascript, */*; q=0.01" --compressed');
+            self::format1iotaData(json_decode($output, true));
+        }
+    }
+
+    protected function format1iotaData($output) {
+        $formattedData = [];
+
+        foreach ($output['events'] as $event) {
+            $formattedData[] = [
+                'title' => $event['title'],
+                'url' => $event['url'],
+                'time' => $event['when'],
+                'date' => $event['startDateUTC'],
+                'event_status' => $event['buttonClass']
+            ];
+        }
+
+        return $formattedData;
+    }
+
     protected function jsonAvailableDates($showInfo)
     {
+        // format data before sorting
+        switch ($showInfo['ticketSeller']) {
+            case 'showclix':
+                echo '<pre>';
+                print_r($showInfo);
+                echo '</pre>';
+                break;
+
+            case '1iota':
+                $showInfo = self::load1iotaShows($showInfo);
+
+                echo '<pre>';
+                print_r($showInfo);
+                echo '</pre>';
+                break;
+        }
+
+
+
         $showInfo['jsonAvailableDates'] = [];
         for ($i = 0; $i < count($showInfo['jsonFileContent']['times']); ++$i) {
             if ($showInfo['jsonFileContent']['times'][$i]['event_status'] != $this->settings['status']['sold_out']) {
@@ -95,11 +115,13 @@ class Tixs
             }
         }
 
+
+
         $availabilityChange = self::checkAvailabilityChange($showInfo);
 
         if ((empty($showInfo['jsonAvailableDates']) && empty($showInfo['storedDateList'])) || $availabilityChange) {
             //die();
-      //self::sortDateStatus($showInfo);
+            //self::sortDateStatus($showInfo);
         } else {
             self::sortDateStatus($showInfo);
         }

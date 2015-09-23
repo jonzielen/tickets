@@ -116,8 +116,8 @@
                 ],
                 'shows'=> [
                     'jimmyFallon' => [
-                        'tickets' => 'https://s3-us-west-1.amazonaws.com/data.1iota.com/project/353/details/data.json',
-                        //'tickets' => 'assets/js/jf-recurring-event-times.json',
+                        //'tickets' => 'https://s3-us-west-1.amazonaws.com/data.1iota.com/project/353/details/data.json',
+                        'tickets' => 'assets/js/jf-recurring-event-times.json',
                         'url' => 'https://fallon.1iota.com/show/353/The-Tonight-Show-Starring-Jimmy-Fallon',
                         'showName' => ($showName = 'The Tonight Show Starring Jimmy Fallon'),
                         'emailTo' => $jonsEmail,
