@@ -56,39 +56,25 @@
                 ]
             ],
             'shows' => [
-                'jimmyFallon' => [
-                    'tickets' => 'http://www.showclix.com/event/TheTonightShowStarringJimmyFallon/recurring-event-times',
-                    //'tickets' => 'assets/js/jf-recurring-event-times.json',
-                    'url' => 'https://www.showclix.com/event/latenightseth',
-                    'showName' => ($showName = 'The Tonight Show Starring Jimmy Fallon'),
+                'dailyShow' => [
+                    'tickets' => 'http://www.showclix.com/event/TheDailyShowWithTrevorNoah/recurring-event-times',
+                    'url' => 'https://www.showclix.com/event/TheDailyShowWithTrevorNoah',
+                    'showName' => ($showName = 'The Daily Show with Trevor Noah'),
                     'emailTo' => $jonsEmail,
                     'datesFile' => datesFileName($showName),
                     'email' => [
-                        'headerImage' => addPathForEmailImages('the-tonight-show-starring-jimmy-fallon.jpg'),
+                        'headerImage' => addPathForEmailImages('the-daily-show-with-trevor-noah.jpg'),
                         'template' => addPathForEmailTemplate('basic-tpl.php')
                     ]
                 ],
                 'stephenColbert' => [
                     'tickets' => 'http://www.showclix.com/event/TheLateShowWithStephenColbert/recurring-event-times',
-                    //'tickets' => 'assets/js/sc-recurring-event-times.json',
-                    'url' => 'https://www.showclix.com/event/latenightseth',
+                    'url' => 'http://www.showclix.com/event/TheLateShowWithStephenColbert',
                     'showName' => ($showName = 'The Late Show with Stephen Colbert'),
                     'emailTo' => $jonsEmail,
                     'datesFile' => datesFileName($showName),
                     'email' => [
                         'headerImage' => addPathForEmailImages('the-late-show-with-stephen-colbert.jpg'),
-                        'template' => addPathForEmailTemplate('basic-tpl.php')
-                    ]
-                ],
-                'sethMeyers' => [
-                    'tickets' => 'http://www.showclix.com/event/latenightseth/recurring-event-times',
-                    //'tickets' => 'assets/js/sm-recurring-event-times.json',
-                    'url' => 'https://www.showclix.com/event/latenightseth',
-                    'showName' => ($showName = 'Late Night with Seth Meyers'),
-                    'emailTo' => $jonsEmail,
-                    'datesFile' => datesFileName($showName),
-                    'email' => [
-                        'headerImage' => addPathForEmailImages('late-night-with-seth-meyers.jpg'),
                         'template' => addPathForEmailTemplate('basic-tpl.php')
                     ]
                 ]
