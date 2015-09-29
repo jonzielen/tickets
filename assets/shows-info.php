@@ -60,7 +60,7 @@
                     'tickets' => 'http://www.showclix.com/event/TheDailyShowWithTrevorNoah/recurring-event-times',
                     'url' => 'https://www.showclix.com/event/TheDailyShowWithTrevorNoah',
                     'showName' => ($showName = 'The Daily Show with Trevor Noah'),
-                    'emailTo' => $jonsEmail,
+                    'emailTo' => $jonsEmail.',pkwilburn@gmail.com',
                     'datesFile' => datesFileName($showName),
                     'email' => [
                         'headerImage' => addPathForEmailImages('the-daily-show-with-trevor-noah.jpg'),
